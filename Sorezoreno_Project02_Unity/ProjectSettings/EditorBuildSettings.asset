@@ -8,9 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Oculus/VR/Scenes/Room.unity
     guid: 54445976c1dbf1c49bb38ba7eba558e8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test01/Test01.unity
     guid: 29fbf7a753a5a9f468254d1ccbad7ba4
+  - enabled: 1
+    path: Assets/Scenes/Test01/Test01_wormmovearound/Test01_wormmovearound.unity
+    guid: 6da96986525c59f4ebf4898ce12cb862
+  - enabled: 1
+    path: Assets/Scenes/Test01/Test01_chickenmovearound/Test01_chickenmovearound.unity
+    guid: 0efc007e1f88eff4792b06228da4f555
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 56221b41f4282ac4297e018fd5c6d4ce,
       type: 2}

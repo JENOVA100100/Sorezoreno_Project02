@@ -14,6 +14,14 @@ ANY KIND, either express or implied. See the License for the specific language g
 permissions and limitations under the License.
 ************************************************************************************/
 
+
+
+
+// OVRPlayerControllerのファイル移動(Assets>Oculus>VR>Scripts>Utill ⇒　Assets)の為このスクリプトを同じファイル移動(Assets>Oculus>VR>Scripts>Utill ⇒　Assets)　(07/12/2020)
+
+
+
+
 using UnityEngine;
 using System.Collections;
 
@@ -22,6 +30,7 @@ using System.Collections;
 /// </summary>
 public class OVRSceneSampleController : MonoBehaviour
 {
+
     /// <summary>
     /// The key that quits the application.
     /// </summary>

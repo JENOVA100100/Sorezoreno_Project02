@@ -57,7 +57,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BlockHeight: 93
-    - _BlockSize: 1
+    - _BlockSize: 1000
     - _BlockWidth: 18
     - _BumpScale: 1
     - _Cull: 0
@@ -74,7 +74,7 @@ Material:
     - _Parallax: 0.02
     - _PixelNumberX: 19
     - _PixelNumberY: -39
-    - _Pixelation: 5
+    - _Pixelation: 6
     - _SD: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
