@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test01/Test01_wormmovearound/Test01_wormmovearound.unity
     guid: 6da96986525c59f4ebf4898ce12cb862
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test01/Test01_chickenmovearound/Test01_chickenmovearound.unity
     guid: 0efc007e1f88eff4792b06228da4f555
   m_configObjects:

@@ -755,28 +755,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 258049921}
-  - component: {fileID: 258049920}
   - component: {fileID: 258049922}
   m_Layer: 0
-  m_Name: changescene
+  m_Name: umweltmanager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &258049920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258049919}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 497116e4aa82be64196ee6f2f39be7b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beforeScene: 
 --- !u!4 &258049921
 Transform:
   m_ObjectHideFlags: 0
@@ -803,7 +789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6d1b6fd54e9f843817b3c742f84be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beforeScene: 
+  MainUmwelt: 
 --- !u!1 &305328264 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3216801498260132207, guid: 5dab86ac772de6a4d89dc01b3827ea05,

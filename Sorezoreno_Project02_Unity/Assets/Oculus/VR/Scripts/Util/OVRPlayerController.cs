@@ -153,11 +153,13 @@ public class OVRPlayerController : MonoBehaviour
 	private bool ReadyToSnapTurn; // Set to true when a snap turn has occurred, code requires one frame of centered thumbstick to enable another snap turn.
 	private bool playerControllerEnabled = false;
 
-    public string beforeScene; //string型の変数beforeSceneを宣言　Sceneの移行のために入れました。(04/12/2020) ⇐publicにしてみる？
-    public bool WormMove = true; //シーンが切れ変わったらこれが反転する。(06/12/2020)⇐publicにしてみる？
-    public bool ChickenMove = false; //シーンが切れ変わったらこれが反転する。(06/12/2020)⇐publicにしてみる？
+    //public string beforeScene; //シーンは今のところ切れ変わらないからコメントアウト(29/12/2020)string型の変数beforeSceneを宣言　Sceneの移行のために入れました。(04/12/2020) ⇐publicにしてみる？
+    //string WormMove; //シーンは今のところ切れ変わらないからコメントアウト(29/12/2020)。シーンが切れ変わったらこれが反転する。(06/12/2020)⇐publicにしてみる？
+    //string ChickenMove; //シーンは今のところ切れ変わらないからコメントアウト(29/12/2020)。シーンが切れ変わったらこれが反転する。(06/12/2020)⇐publicにしてみる？
 
-    public GameObject gameobject;　//シーン切れ変わりの為にchangesceneのSceneMove.csを参照する為に作りました。(08/12/2020)
+    GameObject umweltmanager;　//class　GameObject　の変数を宣言。(29/12/2020)シーン切れ変わりの為にumweltmanagerを参照する為に作りました。(08/12/2020)
+    UmweltManager manager; //class　UmweltManager　の変数を宣言。(29/12/2020)
+    public string HowMove; //class string型のpublic変数 HowMoveを宣言。(29/12/2020)
 
     void Start()
 	{
@@ -166,15 +168,18 @@ public class OVRPlayerController : MonoBehaviour
 		p.z = OVRManager.profile.eyeDepth;
 		CameraRig.transform.localPosition = p;
 
-        gameobject = GameObject.Find("changescene");
+        umweltmanager = GameObject.Find("umweltmanager"); //オブジェクト名からゲームオブジェクトumweltmanagerを探し変数umweltmanagerに代入。(29/12/2020)
+        manager = umweltmanager.GetComponent<UmweltManager>(); //変数umweltmanagerからclass UmweltManagerを取得し、変数managerに代入。(29/12/2020)
 
-        beforeScene = "Test01_wormmovearound";  //起動時のシーン名（とりあえずTest01_wormmovearound)。　Sceneの移行のために入れました。(04/12/2020)
+        //beforeScene = "Test01_wormmovearound";  //void OnActiveSceneChangedは現段階ではシーン変化させないので、使用しない。よってコメントアウトする(29/12/2020)。起動時のシーン名（とりあえずTest01_wormmovearound)。　Sceneの移行のために入れました。(04/12/2020)
 
-        SceneManager.activeSceneChanged += OnActiveSceneChanged;  //☆☆これは使う？(https://qiita.com/Maru60014236/items/6c1250ba98c178eac664)
+        //SceneManager.activeSceneChanged += OnActiveSceneChanged;  //void OnActiveSceneChangedは現段階ではシーン変化させないので、使用しない。よってコメントアウトする(29/12/2020)。☆☆これは使う？(https://qiita.com/Maru60014236/items/6c1250ba98c178eac664)
 
     }
 
-    void OnActiveSceneChanged(Scene prevScene, Scene nextScene)     //シーンが変化したら実行される？関数。(06/12//2020)
+    //以下の void OnActiveSceneChangedは現段階ではシーン変化させないので、使用しない。よってコメントアウトする。(29/12/2020)
+    /*
+    void OnActiveSceneChanged(Scene prevScene, Scene nextScene)     //シーンが変化したら実行される？関数。(06/12//2020) 
     {
         gameobject.GetComponent<UmweltManager>();  //☆シーン切れ変わりの為にchangesceneのSceneMove.csを参照する為に作りました。念の為にここに書いているだけで、これから実装です。(08/12/2020) SceneMoveを消してUmweltManagerにするのでいまはコメントアウト2020/12/25
 
@@ -195,6 +200,7 @@ public class OVRPlayerController : MonoBehaviour
 
         beforeScene = nextScene.name;
     }
+    */
 
     void Awake()
 	{
@@ -238,8 +244,8 @@ public class OVRPlayerController : MonoBehaviour
 	void Update()
 	{
 
-        gameobject.GetComponent<UmweltManager>(); //SceneMoveを消してUmweltManagerにするのでいまはコメントアウト2020/12/25
-
+        //gameobject.GetComponent<UmweltManager>(); //void OnActiveSceneChangedは現段階ではシーン変化させないので、使用しない。よってコメントアウトする(29/12/2020)。SceneMoveを消してUmweltManagerにするのでいまはコメントアウト2020/12/25
+        HowMove = manager.MainUmwelt;　//manager変数に格納された、class UmweltManagerのMainUmweltに格納されているstring型の文字列を代入する。
 
         if (!playerControllerEnabled)
 		{
@@ -435,7 +441,7 @@ public class OVRPlayerController : MonoBehaviour
 			    }
 
 
-                if (WormMove)    //これで、シーンが"Test01_wormmove"の時にのみ実装される移動方法としている(06/12/2020)
+                if (HowMove == "worm")    //ここで、UmweltManagerに格納されているstring型の文字列で移動方法を制御する。(29/12/2020)これで、シーンが"Test01_wormmove"の時にのみ実装される移動方法としている(06/12/2020)
                 {
                     float movehmd = CameraRig.centerEyeAnchor.localPosition.y;//これでHMDの高さを取っている（床からの高さ）
                     float movecontrollerx = CameraRig.rightHandAnchor.localPosition.x - CameraRig.leftHandAnchor.localPosition.x; // これは高さと違い絶対値を取る必要があるので、if文で両側から抑え込む
@@ -485,8 +491,8 @@ public class OVRPlayerController : MonoBehaviour
                 }
 
 
-                if(ChickenMove) //これで、シーンが"Test01_chickenmove"の時にのみ実装される移動方法としている(06/12/2020)
-                {
+                if(HowMove == "chicken") //ここで、UmweltManagerに格納されているstring型の文字列で移動方法を制御する。(29/12/2020)これで、シーンが"Test01_chickenmove"の時にのみ実装される移動方法としている(06/12/2020)
+            {
                     
 			        if (primaryAxis.y > 0.0f)
 				        MoveThrottle += ort * (primaryAxis.y * transform.lossyScale.z * moveInfluence * Vector3.forward);
@@ -508,8 +514,8 @@ public class OVRPlayerController : MonoBehaviour
 
 
                     // これが回転か？コメントアウトしてみよう↓　⇐なんかコメントアウトしたら、処理落ち？したぞ？？
-                if(ChickenMove) //これで、シーンが"Test01_chickenmove"の時にのみ実装される移動方法としている(06/12/2020)
-                { 
+                if(HowMove == "chicken") //ここで、UmweltManagerに格納されているstring型の文字列で移動方法を制御する。(29/12/2020)これで、シーンが"Test01_chickenmove"の時にのみ実装される移動方法としている(06/12/2020)
+        { 
                     if (EnableRotation)　　
 		            {
 			            Vector3 euler = transform.rotation.eulerAngles;
