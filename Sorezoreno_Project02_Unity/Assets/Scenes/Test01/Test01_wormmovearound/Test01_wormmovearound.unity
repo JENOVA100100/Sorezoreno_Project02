@@ -2098,6 +2098,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1134961579}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1060835930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060835928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ce2f136db30c840812e90837d600f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: bbaaa2b4059bde94692f3501526c36c2, type: 2}
 --- !u!114 &1060835933
 MonoBehaviour:
   m_ObjectHideFlags: 0
