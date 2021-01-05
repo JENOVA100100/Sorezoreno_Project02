@@ -4,7 +4,7 @@
 
 public class EffectEye : MonoBehaviour
 {
-    public Material material;
+    [SerializeField] private Material material;
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
