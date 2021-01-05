@@ -356,7 +356,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5c3d5738fa2d6483bb8a2af0a6f50a66, type: 2}
+  - {fileID: 2100000, guid: d73f8afe478afde498d6b36047a52c73, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -789,7 +789,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6d1b6fd54e9f843817b3c742f84be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainUmwelt: 
+  MainUmwelt: worm
+  visualmaterial1: {fileID: 2100000, guid: 15254f110abc0ec4ca19d189aea4b635, type: 2}
+  visualmaterial2: {fileID: 2100000, guid: b6f30914345919d41b6e420aa5416680, type: 2}
+  mosaicwidth: 1
+  mosaicheight: 1
 --- !u!1 &305328264 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3216801498260132207, guid: 5dab86ac772de6a4d89dc01b3827ea05,
@@ -2107,10 +2111,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1060835928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31ce2f136db30c840812e90837d600f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 9055dfb7bbb9ef24aa65dd083b66dfc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: bbaaa2b4059bde94692f3501526c36c2, type: 2}
+  _material:
+  - {fileID: 2100000, guid: 81cc8a4172d88d9499129c61dccd31bc, type: 2}
+  - {fileID: 2100000, guid: 15254f110abc0ec4ca19d189aea4b635, type: 2}
 --- !u!114 &1060835931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2120,10 +2126,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1060835928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31ce2f136db30c840812e90837d600f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 9055dfb7bbb9ef24aa65dd083b66dfc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: b6f30914345919d41b6e420aa5416680, type: 2}
+  _material:
+  - {fileID: 2100000, guid: b6f30914345919d41b6e420aa5416680, type: 2}
+  - {fileID: 2100000, guid: 25c64865685855741a1f524c3e427f84, type: 2}
 --- !u!114 &1060835933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2178,8 +2186,8 @@ MonoBehaviour:
       colorBlindnessType: 0
       colorBlindnessStrength: 1
   m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
+  m_ShowToolkit: 1
+  m_ShowCustomSorter: 1
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []

@@ -1,10 +1,8 @@
-﻿Shader "PostEffect/MosaicRyu"
+﻿Shader "PostEffect/Defalt"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-		_Width("Width",Float) = 160
-		_Height("Height",Float) = 90
     }
     SubShader
     {
@@ -40,17 +38,12 @@
             }
 
             sampler2D _MainTex;
-			float _Width;
-			float _Height;
 
             fixed4 frag (v2f i) : SV_Target
             {
-				float2 grid;
-				grid.x = floor(i.uv.x * _Width) / _Width;
-				grid.y = floor(i.uv.y * _Height) / _Height;
-
-                fixed4 col = tex2D(_MainTex, grid);
-               
+                fixed4 col = tex2D(_MainTex, i.uv);
+                // just invert the colors
+                
                 return col;
             }
             ENDCG

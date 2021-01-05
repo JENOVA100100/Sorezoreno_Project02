@@ -1,10 +1,11 @@
-﻿Shader "PostEffect/MosaicRyu"
+﻿Shader "PostEffect/ColorWorld"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-		_Width("Width",Float) = 160
-		_Height("Height",Float) = 90
+		_RedWorld("RedWorld",Range(0,1))=0.0
+		_GreenWorld("GreenWorld",Range(0,1)) = 0.0
+		_BlueWorld("BlueWorld",Range(0,1)) = 0.0
     }
     SubShader
     {
@@ -40,17 +41,15 @@
             }
 
             sampler2D _MainTex;
-			float _Width;
-			float _Height;
+			float _RedWorld;
+			float _GreenWorld;
+			float _BlueWorld;
 
             fixed4 frag (v2f i) : SV_Target
             {
-				float2 grid;
-				grid.x = floor(i.uv.x * _Width) / _Width;
-				grid.y = floor(i.uv.y * _Height) / _Height;
-
-                fixed4 col = tex2D(_MainTex, grid);
-               
+                fixed4 col = tex2D(_MainTex, i.uv);
+                
+                col.rgb = float3(col.r+_RedWorld,col.g+_GreenWorld,col.b+_BlueWorld);
                 return col;
             }
             ENDCG
