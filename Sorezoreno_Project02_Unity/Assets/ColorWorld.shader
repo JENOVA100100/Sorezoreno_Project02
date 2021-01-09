@@ -48,7 +48,9 @@
 
 			float3x3 rgbTolms;
 			float3x3 lmsTorgb;
-			float3x3 p_sm;
+			/*float3x3 p_sm;*/
+			float3x3 d_sl;
+			/*float3x3 t_ml; */
 			//float1x3 RGB;
 			float3 LMS;
 			float3 LMSp;
@@ -72,11 +74,25 @@
 					{0.02993,-0.19325,1.16339},
 				};
 
-				float3x3 p_sm = {
+				/*float3x3 p_sm = {
 					{0,1.20800,-0.20797},
 					{0,1,0},
 					{0,0,1},
+				};*/
+
+				float3x3 d_sl = {
+					{1,0,0},
+					{0.82781,0,0.17216},
+					{0,0,1},
 				};
+
+				/*
+				float3x3 t_ml = {
+					{1,0,0},
+					{0,1,0},
+					{-0.52543,1.52540,0},
+				
+				}; */
 			
 
 			//float1x3 RGB = {
@@ -92,7 +108,7 @@
 				}*/
 
                 float3 LMS = float3(mul(rgbTolms,float3(col.r,col.g,col.b)));
-				float3 LMSp = float3(mul(p_sm,LMS));
+				float3 LMSp = float3(mul(d_sl,LMS));
 				float3 RGB = float3(mul(lmsTorgb, LMSp));
 
 				col.rgb = RGB;
