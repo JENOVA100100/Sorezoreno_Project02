@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PostEffect_ColorWorld
-  m_Shader: {fileID: 4800000, guid: bab46afc1036a96459a5afe6655a6ea2, type: 3}
+  m_Name: Custom_Color 5
+  m_Shader: {fileID: 4800000, guid: c0e3e3f87c80d534abb0a372bc3ee6d5, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _BlueWorld: 0.118588805
-    - _GreenWorld: -0.41933167
-    - _RedWorld: 0.46108124
-    m_Colors: []
+    - _Glossiness: 0.5
+    - _Metallic: 0
+    m_Colors:
+    - _Color: {r: 0, g: 0.23167038, b: 1, a: 1}
