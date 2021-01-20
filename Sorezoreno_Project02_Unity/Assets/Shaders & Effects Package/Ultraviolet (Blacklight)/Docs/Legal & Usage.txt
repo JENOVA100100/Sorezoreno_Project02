@@ -1,0 +1,3 @@
+This shader and all accompanying assets are legal for usage in any and all domains, as long as the user has proof of purchase through the Unity Asset Store, and can produce it upon request.
+
+Please do not redistribute.

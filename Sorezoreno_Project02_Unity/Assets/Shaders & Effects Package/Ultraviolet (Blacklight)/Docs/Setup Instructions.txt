@@ -1,0 +1,32 @@
+Thanks for purchasing the Black-Light shader pack.
+
+This document contains several sets of instructions - the set-up is slightly different for each different shader, however there are some common steps.
+
+Firstly (for beginners to Unity), you'll need to create a material and apply the shader to it, then assign that material to the renderer of an object in your scene.
+The shaders all support textures and normal maps, and specular highlights.
+
+[Section A]
+With the shader selected, notice the field labelled "LightColor".
+In real ultraviolet light, the rays hits a fluorescent material, causing it to emit light at visible ranges. In this shader, we have
+to specify a "frequency" by choosing a color - this color will activate the UV effects of that shader (which varies from shader to shader).
+
+You will need to create a lightsource, and set its intensity parameter to 1, and then set its colour to be the same colour you chose for the
+"LightColor" field of the material the shader is applied to.
+
+
+[Section B]
+*UltraVioletReveal.shader*
+A material with this shader will adjust the alpha of the object based on whether it is being illuminated by a light of the specified color.
+This means that the object is invisible except under "Blacklight". It is fairly straight-forward to use, simply set it up as described above.
+
+[Section C]
+*UltravioletDynamicRecolor.shader*
+This shader takes a little bit of time to set up - first perform the initial set-up described above (section A).
+Once this shader has been applied to an object in your scene, you will need to add an instance of Fluorescence.cs to that object.
+When selected, this scripts exposes two Color Arrays - "Fluorescent Colors" and "Replacement Colors".
+It also contains one Float Array - "CheckPrecisions".
+Fluorescent Colors specifies the colors that will be UV-reactive (they will change under the Blacklight).
+Replacement Colors specifies the colors that will replace them un the blacklight's illumination.
+The shader performs a per-pixel colour comparison with the values specified in FluorescentColors[]. The required accuracy of this comparison is specified for each color in CheckPrecisions[].
+(For best results, you will need to fine-tune these values per-color to your implementation. (0.5 is a good staring point for most simple applications)).
+Please see DynamicRecolorDemo.scene for an example set-up.
