@@ -223,9 +223,23 @@ public class OVRPlayerController : MonoBehaviour
 		InitialYRotation = transform.rotation.eulerAngles.y;
 	}
 
-	void OnEnable()
+    /*
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.name == "Capsule")
+        {
+            Debug.Log("食べてるよ");
+            Destroy(collision.gameObject);
+        }
+    }
+    */
+   
+
+    void OnEnable()
 	{
 	}
+
+
 
 	void OnDisable()
 	{
