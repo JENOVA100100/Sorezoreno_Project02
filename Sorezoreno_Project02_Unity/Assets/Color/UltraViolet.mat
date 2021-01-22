@@ -60,12 +60,12 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FadeEnd: -1
-    - _FadeStart: 1
+    - _FadeEnd: 0.865
+    - _FadeStart: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Intensity: 0.23
+    - _Intensity: 0.022
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -79,4 +79,4 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _TintColor: {r: 0.4486472, g: 0.6698113, b: 0.6280822, a: 0.105882354}
+    - _TintColor: {r: 1, g: 0, b: 0.8802552, a: 0.105882354}

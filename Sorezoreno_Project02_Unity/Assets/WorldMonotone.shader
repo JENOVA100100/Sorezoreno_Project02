@@ -42,9 +42,9 @@
             }
 
             sampler2D _MainTex;
-			float _GrayColorR;
-			float _GrayColorG;
-			float _GrayColorB;
+			float _GrayColorR = 0.2126;
+			float _GrayColorG = 0.7152;
+			float _GrayColorB = 0.0722;
 
             fixed4 frag (v2f i) : SV_Target
 			{
@@ -53,7 +53,7 @@
 				float3 grayVec = float3(0.2126,0.7152,0.0722);
 				float g = dot(col.rgb, grayVec);
 				//col = fixed4(g, g, g, 1);
-				col.rgb = float3(g+_GrayColorR, g+_GrayColorG, g+_GrayColorB);
+				col.rgb = float3(col.r-(col.r*_GrayColorR)+(g*_GrayColorR),col.g-(col.g*_GrayColorG)+(g*_GrayColorG),col.b-(col.b*_GrayColorB)+(g*_GrayColorB));
 				return col;
 			}
 			ENDCG

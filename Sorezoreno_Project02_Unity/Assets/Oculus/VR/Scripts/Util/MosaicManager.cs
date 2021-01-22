@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//これ今つかってない(blurを使う可能性があれば使う)　(22/01/2021)
+
 public class MosaicManager : MonoBehaviour
 {
     GameObject umweltmanager;　//class　GameObject　の変数を宣言。(31/12/2020)シーン切れ変わりの為にumweltmanagerを参照する為に作りました。(08/12/2020)
@@ -20,13 +22,13 @@ public class MosaicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HowUmwelt = manager.MainUmwelt;//manager変数に格納された、class UmweltManagerのMainUmweltに格納されているstring型の文字列を代入する。
+        //HowUmwelt = manager.MainUmwelt;//manager変数に格納された、class UmweltManagerのMainUmweltに格納されているstring型の文字列を代入する。
 
-        if (HowUmwelt == "worm")
+        if (manager.wormpoint > 29)  //wormpointとかが30を境に生成される
         {
             mosaicfilter.SetActive(true);
         }
-        if (HowUmwelt == "chicken")
+        if (manager.wormpoint < 30)
         {
             mosaicfilter.SetActive(false);
         }
